@@ -25,6 +25,10 @@
 
 <body>
 <?php
+if(!isset($_SESSION['logado'])){
+    header("location: ../admin/config/index.php");
+    unset($_SESSION['logado']);
+}
      if(isset($_SESSION['niassa'])){
       ?>
     <script>
@@ -76,9 +80,9 @@
                     <div class="navbar-menu-wrapper d-flex align-items-center justify-content-between">
 
                     <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                            <a class="navbar-brand brand-logo" href="cabodelegado.php"><img src="../images/logo.png"
+                            <a class="navbar-brand brand-logo" href="niassa.php"><img src="../images/logo.png"
                                     alt="logo" /></a>
-                            <a class="navbar-brand brand-logo-mini" href="cabodelegado.php"><img
+                            <a class="navbar-brand brand-logo-mini" href="niassa.php"><img
                                     src="../images/logo-mini.png" alt="logo" /></a>
                         </div>
                         <ul class="navbar-nav navbar-nav-right">

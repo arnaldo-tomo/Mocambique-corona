@@ -76,9 +76,9 @@
                     <div class="navbar-menu-wrapper d-flex align-items-center justify-content-between">
 
                     <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                            <a class="navbar-brand brand-logo" href="cabodelegado.php"><img src="../images/logo.png"
+                            <a class="navbar-brand brand-logo" href="gaza.php"><img src="../images/logo.png"
                                     alt="logo" /></a>
-                            <a class="navbar-brand brand-logo-mini" href="cabodelegado.php"><img
+                            <a class="navbar-brand brand-logo-mini" href="gaza.php"><img
                                     src="../images/logo-mini.png" alt="logo" /></a>
                         </div>
                         <ul class="navbar-nav navbar-nav-right">
@@ -130,7 +130,7 @@
             <div class="container">
             <ul class="nav page-navigation">
               <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="gaza.php">
                   <i class="mdi mdi-file-document-box menu-icon"></i>
                   <span class="menu-title">MOÇAMBIQUE - CORONA</span>
                 </a>
@@ -219,8 +219,8 @@
                         <div class="col-sm-12 flex-column d-flex stretch-card">
                         <div class="row">
                                 <div class="col-lg-4 d-flex grid-margin stretch-card">
-                                    <div class="card bg-info">
-                                        <div class="card-body text-white">
+                                <div class="card sale-diffrence-border">
+                                        <div class="card-body text-dark">
                                             <h4 class="card-title mb-2">Recuperados</h4>
                                             <h2 class="font-weight-bold mb-3"><i class="mdi mdi-emoticon-happy "></i><?= $Totalrecuperado ?></h2>
                                             <hr>
@@ -243,7 +243,7 @@
                                 </div>
 
                                 <div class="col-lg-4 d-flex grid-margin stretch-card">
-                                    <div class="card sale-visit-statistics-border">
+                                    <div class="card sale-diffrence-border">
                                         <div class="card-body">
                                             <h4 class="card-title mb-2">Óbito</h4>
                                             <h2 class="text-dark mb-2 font-weight-bold mb-3"><i class="mdi mdi-emoticon-sad "></i><?= $Totalobito ?></h2>

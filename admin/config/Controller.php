@@ -45,7 +45,7 @@
             
         }else{
             header("location: ../index.php");
-            $_SESSION['erro']="Email ou Senha Estao Inconrreta";
+            $_SESSION['erro']="E-Mail ou Senha Está Incorreta";
         }
 
     }
