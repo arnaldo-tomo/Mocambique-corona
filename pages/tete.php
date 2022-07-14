@@ -26,10 +26,6 @@
 
 <body>
     <?php
-    if(!isset($_SESSION['logado'])){
-        header("location: ../admin/config/index.php");
-        unset($_SESSION['logado']);
-    }
      if(isset($_SESSION['tete'])){
       ?>
     <script>
@@ -81,9 +77,9 @@
                     <div class="navbar-menu-wrapper d-flex align-items-center justify-content-between">
 
                     <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                            <a class="navbar-brand brand-logo" href="tete.php"><img src="../images/logo.png"
+                            <a class="navbar-brand brand-logo" href="cabodelegado.php"><img src="../images/logo.png"
                                     alt="logo" /></a>
-                            <a class="navbar-brand brand-logo-mini" href="tete.php"><img
+                            <a class="navbar-brand brand-logo-mini" href="cabodelegado.php"><img
                                     src="../images/logo-mini.png" alt="logo" /></a>
                         </div>
                         <ul class="navbar-nav navbar-nav-right">
@@ -136,7 +132,7 @@
                 <div class="container">
                 <ul class="nav page-navigation">
               <li class="nav-item">
-                <a class="nav-link" href="tete.php">
+                <a class="nav-link" href="index.html">
                   <i class="mdi mdi-file-document-box menu-icon"></i>
                   <span class="menu-title">MOÇAMBIQUE - CORONA</span>
                 </a>
@@ -226,22 +222,20 @@
                     <div class="row">
                         <div class="col-sm-12 flex-column d-flex stretch-card">
                             <div class="row">
-                              
                                 <div class="col-lg-4 d-flex grid-margin stretch-card">
-                                    <div class="card sale-visit-diffrence-border">
-                                        <div class="card-body">
-                                        <h4 class="card-title mb-2">Recuperados</h4>
+                                    <div class="card bg-info">
+                                        <div class="card-body text-white">
+                                            <h4 class="card-title mb-2">Recuperados</h4>
                                             <h2 class="font-weight-bold mb-3"><i
                                                     class="mdi mdi-emoticon-happy "></i><?= $Totalrecuperado ?></h2>
                                             <hr>
                                             <h3 class="card-title mb-2">Negativos </h3>
-                                            <h2 class="font-weight-bold mb-3"><i class="mdi mdi-account-minus"></i>
+                                            <h2 class="font-weight-bold mb-3"><i class="mdi mdi-account-minus  "></i>
                                                 <?= $Totalnegativo?></h2>
+
                                         </div>
                                     </div>
                                 </div>
-
-
                                 <div class="col-lg-4 d-flex grid-margin stretch-card">
                                     <div class="card sale-diffrence-border">
                                         <div class="card-body">

@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 // niassa
 $consulta=mysqli_query($conexao, "SELECT SUM(Obito) AS 'niassa' FROM `niassa");
@@ -18,9 +19,6 @@ $RecuperadoNiassa=mysqli_fetch_array($consulta);
 
 $consulta=mysqli_query($conexao, "SELECT Atualizado AS 'niassa' FROM `niassa` ORDER by Atualizado DESC LIMIT 1");
 $DataNiassa=mysqli_fetch_array($consulta);
-
-
-
 
 // Cabo delegado
 $consulta=mysqli_query($conexao, "SELECT SUM(Obito) AS 'cabodelgado' FROM `cabodelgado ");

@@ -1,5 +1,5 @@
-<?php  include_once('admin/config/conexao.php'); ?>
-<?php  include_once('admin/config/total.php');   ?>
+<?php include_once('admin/config/conexao.php'); ?>
+<?php include_once('admin/config/total.php');  ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,11 +19,22 @@
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/estilo.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="images/favicon.png" />
 </head>
 
-<body>
+<body onload="relogio()">
+    <script>
+    setTimeout(function() {
+        $.ajax({
+            url: "/getnewdata",
+            cache: false,
+        }).done(function(html) {
+            $('#data-container ).html(html);
+            });)
+    }, 5000);
+    </script>
     <!-- partial:partials/_horizontal-navbar.html -->
     <div class="horizontal-menu">
         <nav class="bottom-navbar">
@@ -43,7 +54,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="pages/chartjs.php" class="nav-link">
                             <i class="mdi mdi-finance menu-icon"></i>
                             <span class="menu-title">Grafico</span>
                             <i class="menu-arrow"></i>
@@ -71,18 +82,13 @@
             <div class="container">
                 <div class="content-wrapper">
                     <div class="row">
-
                         <div class="col-sm-6 mb-4 mb-xl-0">
                             <div class="d-lg-flex align-items-center">
                                 <div>
                                     <h6 class="text-dark font-weight-bold mb-2">COVID19</h6>
                                     <h2 class="text-dark font-weight-bold mb-8">Painel Coronavírus</h2>
-                                    <h6 class="font-weight-normal mb-2">Atualizado em: 08/02/2022 17:40</h6>
-
-                                    <div class="clock_outer">
-                                        <p> <span class="fa fa-clock-o"> </span> <span id="clock" class="clock">loading
-                                                ...</span></p>
-                                    </div>
+                                    <h4 class="font-weight-bold mb-4">Atualizado em: <span id="text"></span> Horas
+                                    </h4>
                                 </div>
 
                                 <div class="ms-lg-5 d-lg-flex d-none">
@@ -127,29 +133,35 @@
                         <div class="col-sm-8 flex-column d-flex stretch-card">
                             <div class="row">
                                 <div class="col-lg-4 d-flex grid-margin stretch-card">
-                                <div class="card sale-visit-statistics-border">
+                                    <div class="card sale-visit-statistics-border">
                                         <div class="card-body text-black">
                                             <h4 class="card-title mb-2">Recuperados</h4>
                                             <h2 class="font-weight-bold mb-3"><i
-                                                    class="mdi mdi-emoticon-happy "></i><?=  $Totalrecuperado ?></h2>
+                                                    class="mdi mdi-emoticon-happy "></i><?= number_format($Totalrecuperado) ?>
+
+                                            </h2>
+
                                             <hr>
                                             <h3 class="card-title mb-2">Negativos </h3>
                                             <h2 class="font-weight-bold mb-3"><i class="mdi mdi-account-minus  "></i>
-                                                <?= $Totalnegativo?></h2>
+                                                <?= number_format($Totalnegativo) ?></h2>
 
                                         </div>
                                     </div>
                                 </div>
+
+
                                 <div class="col-lg-4 d-flex grid-margin stretch-card">
                                     <div class="card sale-visit-statistics-border">
                                         <div class="card-body">
                                             <h4 class="card-title mb-2">Posetivos</h4>
                                             <h2 class="text-dark mb-2 font-weight-bold mb-3"><i
-                                                    class="mdi mdi-account-plus "></i><?= $Totalpossetivo?></h2>
+                                                    class="mdi mdi-account-plus "></i><?= number_format($Totalpossetivo) ?>
+                                            </h2>
                                             <hr>
                                             <h5 class="card-title mb-2">Em Quarentena</h5>
                                             <h2 class="text-dark mb-2 font-weight-bold mb-3"><i
-                                                    class="mdi mdi-home"></i><?= $Totalquarentena ?></h2>
+                                                    class="mdi mdi-home"></i><?= number_format($Totalquarentena) ?></h2>
                                         </div>
                                     </div>
                                 </div>
@@ -159,11 +171,13 @@
                                         <div class="card-body">
                                             <h4 class="card-title mb-2">Obitos</h4>
                                             <h2 class="text-dark mb-2 font-weight-bold mb-3"><i
-                                                    class="mdi mdi-emoticon-sad "></i><?= $Totalobito ?></h2>
+                                                    class="mdi mdi-emoticon-sad "></i><?= number_format($Totalobito) ?>
+                                            </h2>
                                             <hr>
                                             <h4 class="card-title mb-2">Testados</h4>
                                             <h2 class="text-dark mb-2 font-weight-bold mb-3"><i
-                                                    class="mdi mdi-test-tube "></i><?= $Totaltestado ?></h2>
+                                                    class="mdi mdi-test-tube "></i><?= number_format($Totaltestado) ?>
+                                            </h2>
                                         </div>
                                     </div>
                                 </div>
@@ -173,7 +187,7 @@
                             <div class="card sale-visit-statistics-border">
                                 <div class="card-body">
                                     <h2 class="text-dark mb-2 font-weight-bold">Painel Interativo</h2>
-                                    <small class="text-muted">Navegue pelos dados do Sistema Único de Saúde - SUS, com
+                                    <small class="text-muted">Navegue pelos dados do Sistema Único de Saúde - MISAU, com
                                         informações estratégicas e conheça tudo sobre a COVID-19 de forma transparente e
                                         analítica.</small>
                                     <br>
@@ -208,120 +222,122 @@
                                         <tbody>
                                             <tr>
                                                 <td>Niassa</td>
-                                                <td><?php echo $PossesetivoNiassa['niassa']+$NegativoNiassa['niassa']; ?>
+                                                <td><?php echo number_format($PossesetivoNiassa['niassa'] + $NegativoNiassa['niassa']); ?>
                                                 </td>
                                                 <td><?php echo $RecuperadoNiassa['niassa']; ?></td>
                                                 <td><?php echo $NegativoNiassa['niassa']; ?></td>
-                                                <td><?php echo $PossesetivoNiassa['niassa'];?></td>
-                                                <td><?php echo $QuarentenaNiassa['niassa'];?></td>
+                                                <td><?php echo $PossesetivoNiassa['niassa']; ?></td>
+                                                <td><?php echo $QuarentenaNiassa['niassa']; ?></td>
                                                 <td><?php echo $obitoNiassa['niassa']; ?></td>
                                                 <td><?php echo $DataNiassa['niassa']; ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Cabo Delgado</td>
-                                                <td><?php echo $Possesetivcabodelgado['cabodelgado']+$Negativocabodelgado['cabodelgado'];?>
+                                                <td><?php echo $Possesetivcabodelgado['cabodelgado'] + $Negativocabodelgado['cabodelgado']; ?>
                                                 </td>
-                                                <td><?php echo $Recuperadocabodelgado['cabodelgado'];?></td>
+                                                <td><?php echo $Recuperadocabodelgado['cabodelgado']; ?></td>
                                                 <td><?php echo $Negativocabodelgado['cabodelgado']; ?></td>
-                                                <td><?php echo $Possesetivcabodelgado['cabodelgado'];?></td>
-                                                <td><?php echo $Quarentenacabodelgado['cabodelgado'];?></td>
-                                                <td><?php echo $obitocabodelgado['cabodelgado'];?></td>
-                                                <td><?php echo $Datacabodelgado['cabodelgado'];?></td>
+                                                <td><?php echo $Possesetivcabodelgado['cabodelgado']; ?></td>
+                                                <td><?php echo $Quarentenacabodelgado['cabodelgado']; ?></td>
+                                                <td><?php echo $obitocabodelgado['cabodelgado']; ?></td>
+                                                <td><?php echo $Datacabodelgado['cabodelgado']; ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Nampula</td>
-                                                <td><?php echo $Possesetivonampula['nampula1']+$Negativonampula['nampula1']; ?>
+                                                <td><?php echo $Possesetivonampula['nampula1'] + $Negativonampula['nampula1']; ?>
                                                 </td>
                                                 <td><?php echo $Recuperadonampula['nampula1']; ?></td>
                                                 <td><?php echo $Negativonampula['nampula1']; ?></td>
-                                                <td><?php echo $Possesetivonampula['nampula1'];?></td>
-                                                <td><?php echo $Quarentenanampula['nampula1'];?></td>
+                                                <td><?php echo $Possesetivonampula['nampula1']; ?></td>
+                                                <td><?php echo $Quarentenanampula['nampula1']; ?></td>
                                                 <td><?php echo $Obitonampula['nampula1']; ?></td>
                                                 <td><?php echo $Datanampula['nampula1']; ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Tete</td>
-                                                <td><?php echo $Possesetivotete['tete1']+$Negativotete['tete1']; ?></td>
+                                                <td><?php echo $Possesetivotete['tete1'] + $Negativotete['tete1']; ?>
+                                                </td>
                                                 <td><?php echo $Recuperadotete['tete1']; ?></td>
                                                 <td><?php echo $Negativotete['tete1']; ?></td>
-                                                <td><?php echo $Possesetivotete['tete1'];?></td>
-                                                <td><?php echo $Quarentenatete['tete1'];?></td>
+                                                <td><?php echo $Possesetivotete['tete1']; ?></td>
+                                                <td><?php echo $Quarentenatete['tete1']; ?></td>
                                                 <td><?php echo $obitotete['tete1']; ?></td>
                                                 <td><?php echo $datatete['tete1']; ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Zambezia</td>
-                                                <td><?php echo $Possesetivozambezia['zambezia1']+$Negativozambezia['zambezia1']; ?>
+                                                <td><?php echo $Possesetivozambezia['zambezia1'] + $Negativozambezia['zambezia1']; ?>
                                                 </td>
                                                 <td><?php echo $Recuperadozambezia['zambezia1']; ?></td>
                                                 <td><?php echo $Negativozambezia['zambezia1']; ?></td>
-                                                <td><?php echo $Possesetivozambezia['zambezia1'];?></td>
-                                                <td><?php echo $Quarentenazambezia['zambezia1'];?></td>
+                                                <td><?php echo $Possesetivozambezia['zambezia1']; ?></td>
+                                                <td><?php echo $Quarentenazambezia['zambezia1']; ?></td>
                                                 <td><?php echo $obitozambezia['zambezia1']; ?></td>
                                                 <td><?php echo $datazambezia['data']; ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Manica</td>
-                                                <td><?php echo $Possesetivomanica['manica1']+$Negativomanica['manica1']; ?>
+                                                <td><?php echo $Possesetivomanica['manica1'] + $Negativomanica['manica1']; ?>
                                                 </td>
                                                 <td><?php echo $Recuperadomanica['manica1']; ?></td>
                                                 <td><?php echo $Negativomanica['manica1']; ?></td>
-                                                <td><?php echo $Possesetivomanica['manica1'];?></td>
-                                                <td><?php echo $Quarentenamanica['manica1'];?></td>
+                                                <td><?php echo $Possesetivomanica['manica1']; ?></td>
+                                                <td><?php echo $Quarentenamanica['manica1']; ?></td>
                                                 <td><?php echo $obitomanica['manica1']; ?></td>
                                                 <td><?php echo $datamanica['manica1']; ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Sofala</td>
-                                                <td><?php echo $Possesetivobeira['total']+$Negativobeira['total']; ?>
+                                                <td><?php echo $Possesetivobeira['total'] + $Negativobeira['total']; ?>
                                                 </td>
                                                 <td><?php echo $Recuperadobeira['total']; ?></td>
                                                 <td><?php echo $Negativobeira['total']; ?></td>
-                                                <td><?php echo $Possesetivobeira['total'];?></td>
-                                                <td><?php echo $Quarentenabeira['total'];?></td>
+                                                <td><?php echo $Possesetivobeira['total']; ?></td>
+                                                <td><?php echo $Quarentenabeira['total']; ?></td>
                                                 <td><?php echo $obitobeira['total']; ?></td>
                                                 <td><?php echo $databeira['dado']; ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Inhambane</td>
-                                                <td><?php echo $Possesetivoinhambane['totalidade1']+ $Negativoinhambane['totalidade1'];?>
+                                                <td><?php echo $Possesetivoinhambane['totalidade1'] + $Negativoinhambane['totalidade1']; ?>
                                                 </td>
-                                                <td><?php echo $Recuperadoinhambane['totalidade1'];?></td>
-                                                <td><?php echo $Negativoinhambane['totalidade1'];?></td>
-                                                <td><?php echo $Possesetivoinhambane['totalidade1'];?></td>
-                                                <td><?php echo $Quarentenainhambane['totalidade1'];?></td>
-                                                <td><?php echo $obitoinhambane['totalidade1'];?></td>
-                                                <td><?php echo $datainhambane['totalidade1'];?></td>
+                                                <td><?php echo $Recuperadoinhambane['totalidade1']; ?></td>
+                                                <td><?php echo $Negativoinhambane['totalidade1']; ?></td>
+                                                <td><?php echo $Possesetivoinhambane['totalidade1']; ?></td>
+                                                <td><?php echo $Quarentenainhambane['totalidade1']; ?></td>
+                                                <td><?php echo $obitoinhambane['totalidade1']; ?></td>
+                                                <td><?php echo $datainhambane['totalidade1']; ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Gaza</td>
-                                                <td><?php echo $Possesetivogaza['gaza1']+$Negativogaza['gaza1']; ?></td>
+                                                <td><?php echo $Possesetivogaza['gaza1'] + $Negativogaza['gaza1']; ?>
+                                                </td>
                                                 <td><?php echo $Recuperadogaza['gaza1']; ?></td>
                                                 <td><?php echo $Negativogaza['gaza1']; ?></td>
-                                                <td><?php echo $Possesetivogaza['gaza1'];?></td>
-                                                <td><?php echo $Quarentenagaza['gaza1'];?></td>
+                                                <td><?php echo $Possesetivogaza['gaza1']; ?></td>
+                                                <td><?php echo $Quarentenagaza['gaza1']; ?></td>
                                                 <td><?php echo $obitogaza['gaza1']; ?></td>
                                                 <td><?php echo $datagaza['gaza1']; ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Pronvincia de Maputo</td>
-                                                <td><?php echo $Possesetivoprovincia['provincia1']+$Negativoprovincia['provincia1'];?>
+                                                <td><?php echo $Possesetivoprovincia['provincia1'] + $Negativoprovincia['provincia1']; ?>
                                                 </td>
                                                 <td><?php echo $Recuperadoprovincia['provincia1']; ?></td>
                                                 <td><?php echo $Negativoprovincia['provincia1']; ?></td>
-                                                <td><?php echo $Possesetivoprovincia['provincia1'];?></td>
-                                                <td><?php echo $Quarentenaprovincia['provincia1'];?></td>
+                                                <td><?php echo $Possesetivoprovincia['provincia1']; ?></td>
+                                                <td><?php echo $Quarentenaprovincia['provincia1']; ?></td>
                                                 <td><?php echo $obitoprovincia['provincia1']; ?></td>
                                                 <td><?php echo $dataprovincia['provincia1']; ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Cidade de Maputo</td>
-                                                <td><?php echo $Possesetivocidade['ciademaputo1']+$Negativocidade['ciademaputo1'];?>
+                                                <td><?php echo $Possesetivocidade['ciademaputo1'] + $Negativocidade['ciademaputo1']; ?>
                                                 </td>
                                                 <td><?php echo $Recuperadocidade['ciademaputo1']; ?></td>
                                                 <td><?php echo $Negativocidade['ciademaputo1']; ?></td>
-                                                <td><?php echo $Possesetivocidade['ciademaputo1'];?></td>
-                                                <td><?php echo $Quarentenacidade['ciademaputo1'];?></td>
+                                                <td><?php echo $Possesetivocidade['ciademaputo1']; ?></td>
+                                                <td><?php echo $Quarentenacidade['ciademaputo1']; ?></td>
                                                 <td><?php echo $obitocidade['ciademaputo1']; ?></td>
                                                 <td><?php echo $datacidade['ciademaputo1']; ?></td>
                                             </tr>
@@ -358,34 +374,49 @@
                                                     <canvas id="bestSellers"></canvas>
                                                 </div>
                                             </div>
-                                            <p class="mt-3 mb-4 mb-lg-0">
-                                            </p>
+
                                         </div>
                                         <div class="col-lg-3">
-                                            <h4 class="card-title">Estatistica de crianças</h4>
+                                            <?php $total = 31616078; ?>
+                                            <h2 class="text-dark font-weight-bold mb-4">Populaçao nacional.
+                                                <?= number_format($total) ?></h2>
+                                            <h 6 class="card-body"></h>
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <div class="progress progress-lg grouped mb-2">
                                                         <div class="progress-bar  bg-danger" role="progressbar"
-                                                            style="width: 40%" aria-valuenow="25" aria-valuemin="0"
-                                                            aria-valuemax="100"></div>
+                                                            style="width: <?= $Totalobito ?>%" aria-valuenow="100"
+                                                            aria-valuemin="0" aria-valuemax="100"></div>
                                                         <div class="progress-bar bg-info" role="progressbar"
-                                                            style="width: 10%" aria-valuenow="50" aria-valuemin="0"
-                                                            aria-valuemax="100"></div>
+                                                            style="width: <?= $Totalquarentena ?>%" aria-valuenow="50"
+                                                            aria-valuemin="0" aria-valuemax="100"></div>
                                                         <div class="progress-bar bg-warning" role="progressbar"
-                                                            style="width: 20%" aria-valuenow="50" aria-valuemin="0"
-                                                            aria-valuemax="100"></div>
+                                                            style="width: <?= $Totalnegativo ?>%" aria-valuenow="50"
+                                                            aria-valuemin="0" aria-valuemax="100"></div>
                                                         <div class="progress-bar bg-success" role="progressbar"
-                                                            style="width: 30%" aria-valuenow="50" aria-valuemin="0"
-                                                            aria-valuemax="100"></div>
+                                                            style="width: <?= $Totalpossetivo ?>%" aria-valuenow="50"
+                                                            aria-valuemin="0" aria-valuemax="100"></div>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-12">
                                                     <ul class="graphl-legend-rectangle">
-                                                        <li><span class="bg-danger"></span>Obitos (15%)</li>
-                                                        <li><span class="bg-warning"></span>Quaretena (20%)</li>
-                                                        <li><span class="bg-info"></span>Negativo (25%)</li>
-                                                        <li><span class="bg-success"></span>possetivo (40%)</li>
+
+                                                        <li><span class="bg-danger"></span>Obitos
+                                                            (
+                                                            <?=
+
+                                                            number_format($Totalobito * 100 / $total)
+
+                                                            ?>
+                                                            %)
+                                                        </li>
+                                                        <li><span class="bg-warning"></span>Quaretena
+                                                            (<?= ($Totalquarentena * 100) / $total ?>%)
+                                                        </li>
+                                                        <li><span class="bg-info"></span>Negativo
+                                                            (<?= ($Totalnegativo * 100) / $total ?>%)</li>
+                                                        <li><span class="bg-success"></span>possetivof
+                                                            (<?= ($Totalpossetivo * 100) / $total ?>%)</li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -398,7 +429,7 @@
                         </div>
 
                     </div>
-                 
+
 
                 </div>
                 <div class="container">
@@ -407,21 +438,24 @@
                             <div class="d-sm-flex justify-content-center justify-content-sm-between">
                                 <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright ©
                                     2020 -
-                                    <?php $ano = date('Y'); echo $ano;?> <a href="http://arnaldotomo.epizy.com/"
+                                    <?php $ano = date('Y');
+                                    echo $ano; ?> <a href="http://arnaldotomo.epizy.com/"
                                         target="_blank">http://arnaldotomo.epizy.com </a> </span>
-                                <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Podes
+                                <!-- <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Podes
                                     reutiliar os
-                                    codigos desse projeto para quais quer fins </a> templates</span>
+                                    codigos desse projeto para quais quer fins </a> templates</span>-->
                             </div>
                         </div>
                     </footer>
                 </div>
                 <!-- container-scroller -->
                 <!-- base:js -->
-                <script src="vendors/base/vendor.bundle.base.js"></script>
-                <!-- endinject -->
+                <script src="vendors/base/vendor.bundle.base.js">
+                < /scrip> <!--endinject-- >
 
-                <script src="custom.js"></script>
+                <
+                script src = "custom.js" >
+                </script>
                 <script src="popper.min.js"></script>
                 <!-- Plugin js for this page-->
                 <!-- End plugin js for this page-->
@@ -438,6 +472,7 @@
                 <script src="js/jquery.cookie.js" type="text/javascript"></script>
                 <!-- Custom js for this page-->
                 <script src="js/dashboard.js"></script>
+                <script src="js/time.js"></script>
                 <!-- End custom js for this page-->
 
                 <!-- DataTables  & Plugins -->

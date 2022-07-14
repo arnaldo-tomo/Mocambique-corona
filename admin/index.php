@@ -11,11 +11,15 @@
     <link rel="stylesheet" href="../vendors/base/vendor.bundle.base.css">
     <script src="../vendors/alerta/sweetalert2.all.min.js"></script>
     <script src="sweetalert2.all.min.js"></script>
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <!-- End plugin css for this page -->
     <!-- inject:css -->
     <link rel="stylesheet" href="../css/style.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="../images/favicon.png" />
 </head>
+
 <body>
     <div class="container-scroller">
         <div class="container-fluid page-body-wrapper full-page-wrapper">
@@ -27,10 +31,9 @@
                                 <div class="brand-logo">
                                     <img src="../images/logo.png" alt="logo">
                                 </div>
-                                <h4>Olá!,vamos começar</h4>
-                                <h6 class="font-weight-light">Faça login para continuar.</h6>
+                                <h4>Hello! let's get started</h4>
+                                <h6 class="font-weight-light">Sign in to continue.</h6>
                                 <?php
-                               
                                   session_start();
                                   if(isset($_SESSION['erro'])){
                                 ?>

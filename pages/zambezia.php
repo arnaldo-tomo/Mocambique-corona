@@ -25,12 +25,6 @@
 
 <body>
 <?php
-
-
-if(!isset($_SESSION['logado'])){
-    header("location: ../admin/config/index.php");
-    unset($_SESSION['logado']);
-}
      if(isset($_SESSION['zabe'])){
       ?>
     <script>
@@ -137,7 +131,7 @@ if(!isset($_SESSION['logado'])){
             <div class="container">
             <ul class="nav page-navigation">
               <li class="nav-item">
-                <a class="nav-link" href="zambezia.php">
+                <a class="nav-link" href="index.html">
                   <i class="mdi mdi-file-document-box menu-icon"></i>
                   <span class="menu-title">MOÇAMBIQUE - CORONA</span>
                 </a>

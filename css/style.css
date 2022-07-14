@@ -15,7 +15,11 @@
                 opacity: 1;
             }
         }
-        
+           .novo {
+               background-color: blue;
+               color: blue;
+               text-decoration: blue;
+           }
         @-webkit-keyframes flash {
             0% {
                 opacity: 1;
@@ -8603,7 +8607,7 @@
             --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
             --bs-body-font-family: var(--bs-font-sans-serif);
             --bs-body-font-size: 1rem;
-            --bs-body-font-weight: 300;
+            --bs-body-font-weight: 400;
             --bs-body-line-height: 1.5;
             --bs-body-color: #6c7293;
             --bs-body-bg: #fff;
@@ -8660,7 +8664,7 @@
         .h6 {
             margin-top: 0;
             margin-bottom: 0.5rem;
-            font-weight: 400;
+            font-weight: 500;
             line-height: 1.2;
         }
         
@@ -24537,6 +24541,13 @@
                 right: 0;
             }
         }
+
+#novo{
+    padding-right: 500%;
+    color: beige;
+}
+
         /*# sourceMappingURL=maps/style.css.map */
         
         .input {
+        }

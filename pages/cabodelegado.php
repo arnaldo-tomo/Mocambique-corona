@@ -26,10 +26,6 @@
 
 <body>
 <?php
-if(!isset($_SESSION['logado'])){
-    header("location: ../admin/config/index.php");
-    unset($_SESSION['logado']);
-}
      if(isset($_SESSION['cabo'])){
       ?>
     <script>

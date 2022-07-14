@@ -36,21 +36,21 @@
                         </a>
                     </li>
                     <li class="nav-item active">
-                        <a href="#" class="nav-link" active>
+                        <a href="tabales.php" class="nav-link" active>
                             <i class="mdi mdi-grid menu-icon"></i>
                             <span class="menu-title">Estatistica</span>
                             <i class="menu-arrow"></i>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="chartjs.php" class="nav-link">
                             <i class="mdi mdi-finance menu-icon"></i>
                             <span class="menu-title">Grafico</span>
                             <i class="menu-arrow"></i>
                         </a>
                     </li>
                     <li class="nav-item ">
-                        <a href="" class="nav-link">
+                        <a href="#" class="nav-link">
                             <i class="mdi mdi-grid menu-icon"></i>
                             <span class="menu-title">Tabelas</span>
                             <i class="menu-arrow"></i>
@@ -203,511 +203,511 @@
                                         <div class="tab-content tab-no-active-fill-tab-content">
                                             <div class="tab-pane fade show active" id="revenue-for-last-month"
                                                 role="tabpanel" aria-labelledby="Niassa">
-                                              
-                                                        <table id="example1" class="table table-striped">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th>Testados</th>
-                                                                    <th>Recuperado</th>
-                                                                    <th>Negativo</th>
-                                                                    <th>Possetivo</th>
-                                                                    <th>Quarentena</th>
-                                                                    <th>Obitos</th>
-                                                                    <th>Atualizado em:</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <?php
+
+                                                <table id="example1" class="table table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Testados</th>
+                                                            <th>Recuperado</th>
+                                                            <th>Negativo</th>
+                                                            <th>Possetivo</th>
+                                                            <th>Quarentena</th>
+                                                            <th>Obitos</th>
+                                                            <th>Atualizado em:</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <?php
                                                                     $tabela=mysqli_query($conexao, "SELECT * FROM `niassa` ORDER BY codigo  ");
                                                                      while($array=mysqli_fetch_array($tabela)) {
                                                                          ?>
-                                                                    <td><?= $array['3']+$array['4'] ?></td>
-                                                                    <td><?= $array['1'] ?></td>
-                                                                    <td><?= $array['2'] ?></td>
-                                                                    <td><?= $array['3'] ?></td>
-                                                                    <td><?= $array['4'] ?></td>
-                                                                    <td><?= $array['5'] ?></td>
-                                                                    <td><?= $array['6'] ?></td>
+                                                            <td><?= $array['3']+$array['4'] ?></td>
+                                                            <td><?= $array['1'] ?></td>
+                                                            <td><?= $array['2'] ?></td>
+                                                            <td><?= $array['3'] ?></td>
+                                                            <td><?= $array['4'] ?></td>
+                                                            <td><?= $array['5'] ?></td>
+                                                            <td><?= $array['6'] ?></td>
 
-                                                                </tr>
-                                                                <?php
+                                                        </tr>
+                                                        <?php
                                                                      }
                                                                       ?>
-                                                            </tbody>
-                                                            <tfoot>
-                                                                <tr>
-                                                                    <th>Testados</th>
-                                                                    <th>Recuperado</th>
-                                                                    <th>Negativo</th>
-                                                                    <th>Possetivo</th>
-                                                                    <th>Quarentena</th>
-                                                                    <th>Obitos</th>
-                                                                    <th>Atualizado em:</th>
-                                                                </tr>
-                                                            </tfoot>
-                                                        </table>
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <th>Testados</th>
+                                                            <th>Recuperado</th>
+                                                            <th>Negativo</th>
+                                                            <th>Possetivo</th>
+                                                            <th>Quarentena</th>
+                                                            <th>Obitos</th>
+                                                            <th>Atualizado em:</th>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
                                             </div>
                                             <div class="tab-pane fade" id="server-loading" role="tabpanel"
                                                 aria-labelledby="cabodelgado">
-                                                <table  class="table table-bordered table-striped">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th>Testados</th>
-                                                                    <th>Recuperado</th>
-                                                                    <th>Negativo</th>
-                                                                    <th>Possetivo</th>
-                                                                    <th>Quarentena</th>
-                                                                    <th>Obitos</th>
-                                                                    <th>Atualizado em:</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <?php
+                                                <table class="table table-bordered table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Testados</th>
+                                                            <th>Recuperado</th>
+                                                            <th>Negativo</th>
+                                                            <th>Possetivo</th>
+                                                            <th>Quarentena</th>
+                                                            <th>Obitos</th>
+                                                            <th>Atualizado em:</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <?php
                                                                     $tabela=mysqli_query($conexao, "SELECT * FROM `tete` ");
                                                                      while($array=mysqli_fetch_array($tabela)) {
                                                                          ?>
-                                                                    <td><?= $array['3']+$array['4'] ?></td>
-                                                                    <td><?= $array['1'] ?></td>
-                                                                    <td><?= $array['2'] ?></td>
-                                                                    <td><?= $array['3'] ?></td>
-                                                                    <td><?= $array['4'] ?></td>
-                                                                    <td><?= $array['5'] ?></td>
-                                                                    <td><?= $array['6'] ?></td>
+                                                            <td><?= $array['3']+$array['4'] ?></td>
+                                                            <td><?= $array['1'] ?></td>
+                                                            <td><?= $array['2'] ?></td>
+                                                            <td><?= $array['3'] ?></td>
+                                                            <td><?= $array['4'] ?></td>
+                                                            <td><?= $array['5'] ?></td>
+                                                            <td><?= $array['6'] ?></td>
 
-                                                                </tr>
-                                                                <?php
+                                                        </tr>
+                                                        <?php
                                                                      }
                                                                       ?>
-                                                            </tbody>
-                                                            <tfoot>
-                                                                <tr>
-                                                                    <th>Testados</th>
-                                                                    <th>Recuperado</th>
-                                                                    <th>Negativo</th>
-                                                                    <th>Possetivo</th>
-                                                                    <th>Quarentena</th>
-                                                                    <th>Obitos</th>
-                                                                    <th>Atualizado em:</th>
-                                                                </tr>
-                                                            </tfoot>
-                                                        </table>
-                                                 
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <th>Testados</th>
+                                                            <th>Recuperado</th>
+                                                            <th>Negativo</th>
+                                                            <th>Possetivo</th>
+                                                            <th>Quarentena</th>
+                                                            <th>Obitos</th>
+                                                            <th>Atualizado em:</th>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+
                                             </div>
                                             <div class="tab-pane fade" id="data-managed" role="tabpanel"
                                                 aria-labelledby="nampula">
                                                 <table class="table table-striped">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th>Testados</th>
-                                                                    <th>Recuperado</th>
-                                                                    <th>Negativo</th>
-                                                                    <th>Possetivo</th>
-                                                                    <th>Quarentena</th>
-                                                                    <th>Obitos</th>
-                                                                    <th>Atualizado em:</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <?php
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Testados</th>
+                                                            <th>Recuperado</th>
+                                                            <th>Negativo</th>
+                                                            <th>Possetivo</th>
+                                                            <th>Quarentena</th>
+                                                            <th>Obitos</th>
+                                                            <th>Atualizado em:</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <?php
                                                                     $tabela=mysqli_query($conexao, "SELECT * FROM `nampula` ");
                                                                      while($array=mysqli_fetch_array($tabela)) {
                                                                          ?>
-                                                                    <td><?= $array['3']+$array['4'] ?></td>
-                                                                    <td><?= $array['1'] ?></td>
-                                                                    <td><?= $array['2'] ?></td>
-                                                                    <td><?= $array['3'] ?></td>
-                                                                    <td><?= $array['4'] ?></td>
-                                                                    <td><?= $array['5'] ?></td>
-                                                                    <td><?= $array['6'] ?></td>
+                                                            <td><?= $array['3']+$array['4'] ?></td>
+                                                            <td><?= $array['1'] ?></td>
+                                                            <td><?= $array['2'] ?></td>
+                                                            <td><?= $array['3'] ?></td>
+                                                            <td><?= $array['4'] ?></td>
+                                                            <td><?= $array['5'] ?></td>
+                                                            <td><?= $array['6'] ?></td>
 
-                                                                </tr>
-                                                                <?php
+                                                        </tr>
+                                                        <?php
                                                                      }
                                                                       ?>
-                                                            </tbody>
-                                                            <tfoot>
-                                                                <tr>
-                                                                    <th>Testados</th>
-                                                                    <th>Recuperado</th>
-                                                                    <th>Negativo</th>
-                                                                    <th>Possetivo</th>
-                                                                    <th>Quarentena</th>
-                                                                    <th>Obitos</th>
-                                                                    <th>Atualizado em:</th>
-                                                                </tr>
-                                                            </tfoot>
-                                                        </table>
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <th>Testados</th>
+                                                            <th>Recuperado</th>
+                                                            <th>Negativo</th>
+                                                            <th>Possetivo</th>
+                                                            <th>Quarentena</th>
+                                                            <th>Obitos</th>
+                                                            <th>Atualizado em:</th>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
                                             </div>
                                             <div class="tab-pane fade" id="sales-by-traffic" role="tabpanel"
                                                 aria-labelledby="tete">
                                                 <table class="table table-bordered table-striped">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th>Testados</th>
-                                                                    <th>Recuperado</th>
-                                                                    <th>Negativo</th>
-                                                                    <th>Possetivo</th>
-                                                                    <th>Quarentena</th>
-                                                                    <th>Obitos</th>
-                                                                    <th>Atualizado em:</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <?php
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Testados</th>
+                                                            <th>Recuperado</th>
+                                                            <th>Negativo</th>
+                                                            <th>Possetivo</th>
+                                                            <th>Quarentena</th>
+                                                            <th>Obitos</th>
+                                                            <th>Atualizado em:</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <?php
                                                                     $tabela=mysqli_query($conexao, "SELECT * FROM `tete` ");
                                                                      while($array=mysqli_fetch_array($tabela)) {
                                                                          ?>
-                                                                    <td><?= $array['3']+$array['4'] ?></td>
-                                                                    <td><?= $array['1'] ?></td>
-                                                                    <td><?= $array['2'] ?></td>
-                                                                    <td><?= $array['3'] ?></td>
-                                                                    <td><?= $array['4'] ?></td>
-                                                                    <td><?= $array['5'] ?></td>
-                                                                    <td><?= $array['6'] ?></td>
+                                                            <td><?= $array['3']+$array['4'] ?></td>
+                                                            <td><?= $array['1'] ?></td>
+                                                            <td><?= $array['2'] ?></td>
+                                                            <td><?= $array['3'] ?></td>
+                                                            <td><?= $array['4'] ?></td>
+                                                            <td><?= $array['5'] ?></td>
+                                                            <td><?= $array['6'] ?></td>
 
-                                                                </tr>
-                                                                <?php
+                                                        </tr>
+                                                        <?php
                                                                      }
                                                                       ?>
-                                                            </tbody>
-                                                            <tfoot>
-                                                                <tr>
-                                                                    <th>Testados</th>
-                                                                    <th>Recuperado</th>
-                                                                    <th>Negativo</th>
-                                                                    <th>Possetivo</th>
-                                                                    <th>Quarentena</th>
-                                                                    <th>Obitos</th>
-                                                                    <th>Atualizado em:</th>
-                                                                </tr>
-                                                            </tfoot>
-                                                        </table>
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <th>Testados</th>
+                                                            <th>Recuperado</th>
+                                                            <th>Negativo</th>
+                                                            <th>Possetivo</th>
+                                                            <th>Quarentena</th>
+                                                            <th>Obitos</th>
+                                                            <th>Atualizado em:</th>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
                                             </div>
                                             <div class="tab-pane fade" id="zambezia" role="tabpanel"
                                                 aria-labelledby="IDzambezia">
-                                                <table  class="table table-bordered table-striped">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th>Testados</th>
-                                                                    <th>Recuperado</th>
-                                                                    <th>Negativo</th>
-                                                                    <th>Possetivo</th>
-                                                                    <th>Quarentena</th>
-                                                                    <th>Obitos</th>
-                                                                    <th>Atualizado em:</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <?php
+                                                <table class="table table-bordered table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Testados</th>
+                                                            <th>Recuperado</th>
+                                                            <th>Negativo</th>
+                                                            <th>Possetivo</th>
+                                                            <th>Quarentena</th>
+                                                            <th>Obitos</th>
+                                                            <th>Atualizado em:</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <?php
                                                                     $tabela=mysqli_query($conexao, "SELECT * FROM `zambezia` ");
                                                                      while($array=mysqli_fetch_array($tabela)) {
                                                                          ?>
-                                                                    <td><?= $array['3']+$array['4'] ?></td>
-                                                                    <td><?= $array['1'] ?></td>
-                                                                    <td><?= $array['2'] ?></td>
-                                                                    <td><?= $array['3'] ?></td>
-                                                                    <td><?= $array['4'] ?></td>
-                                                                    <td><?= $array['5'] ?></td>
-                                                                    <td><?= $array['6'] ?></td>
+                                                            <td><?= $array['3']+$array['4'] ?></td>
+                                                            <td><?= $array['1'] ?></td>
+                                                            <td><?= $array['2'] ?></td>
+                                                            <td><?= $array['3'] ?></td>
+                                                            <td><?= $array['4'] ?></td>
+                                                            <td><?= $array['5'] ?></td>
+                                                            <td><?= $array['6'] ?></td>
 
-                                                                </tr>
-                                                                <?php
+                                                        </tr>
+                                                        <?php
                                                                      }
                                                                       ?>
-                                                            </tbody>
-                                                            <tfoot>
-                                                                <tr>
-                                                                    <th>Testados</th>
-                                                                    <th>Recuperado</th>
-                                                                    <th>Negativo</th>
-                                                                    <th>Possetivo</th>
-                                                                    <th>Quarentena</th>
-                                                                    <th>Obitos</th>
-                                                                    <th>Atualizado em:</th>
-                                                                </tr>
-                                                            </tfoot>
-                                                        </table>
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <th>Testados</th>
+                                                            <th>Recuperado</th>
+                                                            <th>Negativo</th>
+                                                            <th>Possetivo</th>
+                                                            <th>Quarentena</th>
+                                                            <th>Obitos</th>
+                                                            <th>Atualizado em:</th>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
                                             </div>
                                             <div class="tab-pane fade" id="manica" role="tabpanel"
                                                 aria-labelledby="IDmanica">
-                                                <table  class="table table-bordered table-striped">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th>Testados</th>
-                                                                    <th>Recuperado</th>
-                                                                    <th>Negativo</th>
-                                                                    <th>Possetivo</th>
-                                                                    <th>Quarentena</th>
-                                                                    <th>Obitos</th>
-                                                                    <th>Atualizado em:</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <?php
+                                                <table class="table table-bordered table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Testados</th>
+                                                            <th>Recuperado</th>
+                                                            <th>Negativo</th>
+                                                            <th>Possetivo</th>
+                                                            <th>Quarentena</th>
+                                                            <th>Obitos</th>
+                                                            <th>Atualizado em:</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <?php
                                                                     $tabela=mysqli_query($conexao, "SELECT * FROM `manica` ");
                                                                      while($array=mysqli_fetch_array($tabela)) {
                                                                          ?>
-                                                                    <td><?= $array['3']+$array['4'] ?></td>
-                                                                    <td><?= $array['1'] ?></td>
-                                                                    <td><?= $array['2'] ?></td>
-                                                                    <td><?= $array['3'] ?></td>
-                                                                    <td><?= $array['4'] ?></td>
-                                                                    <td><?= $array['5'] ?></td>
-                                                                    <td><?= $array['6'] ?></td>
+                                                            <td><?= $array['3']+$array['4'] ?></td>
+                                                            <td><?= $array['1'] ?></td>
+                                                            <td><?= $array['2'] ?></td>
+                                                            <td><?= $array['3'] ?></td>
+                                                            <td><?= $array['4'] ?></td>
+                                                            <td><?= $array['5'] ?></td>
+                                                            <td><?= $array['6'] ?></td>
 
-                                                                </tr>
-                                                                <?php
+                                                        </tr>
+                                                        <?php
                                                                      }
                                                                       ?>
-                                                            </tbody>
-                                                            <tfoot>
-                                                                <tr>
-                                                                    <th>Testados</th>
-                                                                    <th>Recuperado</th>
-                                                                    <th>Negativo</th>
-                                                                    <th>Possetivo</th>
-                                                                    <th>Quarentena</th>
-                                                                    <th>Obitos</th>
-                                                                    <th>Atualizado em:</th>
-                                                                </tr>
-                                                            </tfoot>
-                                                        </table>
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <th>Testados</th>
+                                                            <th>Recuperado</th>
+                                                            <th>Negativo</th>
+                                                            <th>Possetivo</th>
+                                                            <th>Quarentena</th>
+                                                            <th>Obitos</th>
+                                                            <th>Atualizado em:</th>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
                                             </div>
                                             <div class="tab-pane fade" id="sofala" role="tabpanel"
                                                 aria-labelledby="IDsofala">
-                                                <table  class="table table-bordered table-striped">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th>Testados</th>
-                                                                    <th>Recuperado</th>
-                                                                    <th>Negativo</th>
-                                                                    <th>Possetivo</th>
-                                                                    <th>Quarentena</th>
-                                                                    <th>Obitos</th>
-                                                                    <th>Atualizado em:</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <?php
+                                                <table class="table table-bordered table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Testados</th>
+                                                            <th>Recuperado</th>
+                                                            <th>Negativo</th>
+                                                            <th>Possetivo</th>
+                                                            <th>Quarentena</th>
+                                                            <th>Obitos</th>
+                                                            <th>Atualizado em:</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <?php
                                                                     $tabela=mysqli_query($conexao, "SELECT * FROM `beira` ");
                                                                      while($array=mysqli_fetch_array($tabela)) {
                                                                          ?>
-                                                                    <td><?= $array['3']+$array['4'] ?></td>
-                                                                    <td><?= $array['1'] ?></td>
-                                                                    <td><?= $array['2'] ?></td>
-                                                                    <td><?= $array['3'] ?></td>
-                                                                    <td><?= $array['4'] ?></td>
-                                                                    <td><?= $array['5'] ?></td>
-                                                                    <td><?= $array['6'] ?></td>
+                                                            <td><?= $array['3']+$array['4'] ?></td>
+                                                            <td><?= $array['1'] ?></td>
+                                                            <td><?= $array['2'] ?></td>
+                                                            <td><?= $array['3'] ?></td>
+                                                            <td><?= $array['4'] ?></td>
+                                                            <td><?= $array['5'] ?></td>
+                                                            <td><?= $array['6'] ?></td>
 
-                                                                </tr>
-                                                                <?php
+                                                        </tr>
+                                                        <?php
                                                                      }
                                                                       ?>
-                                                            </tbody>
-                                                            <tfoot>
-                                                                <tr>
-                                                                    <th>Testados</th>
-                                                                    <th>Recuperado</th>
-                                                                    <th>Negativo</th>
-                                                                    <th>Possetivo</th>
-                                                                    <th>Quarentena</th>
-                                                                    <th>Obitos</th>
-                                                                    <th>Atualizado em:</th>
-                                                                </tr>
-                                                            </tfoot>
-                                                        </table>
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <th>Testados</th>
+                                                            <th>Recuperado</th>
+                                                            <th>Negativo</th>
+                                                            <th>Possetivo</th>
+                                                            <th>Quarentena</th>
+                                                            <th>Obitos</th>
+                                                            <th>Atualizado em:</th>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
                                             </div>
                                             <div class="tab-pane fade" id="inhambane" role="tabpanel"
                                                 aria-labelledby="IDinhambane">
                                                 <table class="table table-bordered table-striped">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th>Testados</th>
-                                                                    <th>Recuperado</th>
-                                                                    <th>Negativo</th>
-                                                                    <th>Possetivo</th>
-                                                                    <th>Quarentena</th>
-                                                                    <th>Obitos</th>
-                                                                    <th>Atualizado em:</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <?php
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Testados</th>
+                                                            <th>Recuperado</th>
+                                                            <th>Negativo</th>
+                                                            <th>Possetivo</th>
+                                                            <th>Quarentena</th>
+                                                            <th>Obitos</th>
+                                                            <th>Atualizado em:</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <?php
                                                                     $tabela=mysqli_query($conexao, "SELECT * FROM `inhambane` ");
                                                                      while($array=mysqli_fetch_array($tabela)) {
                                                                          ?>
-                                                                    <td><?= $array['3']+$array['4'] ?></td>
-                                                                    <td><?= $array['1'] ?></td>
-                                                                    <td><?= $array['2'] ?></td>
-                                                                    <td><?= $array['3'] ?></td>
-                                                                    <td><?= $array['4'] ?></td>
-                                                                    <td><?= $array['5'] ?></td>
-                                                                    <td><?= $array['6'] ?></td>
+                                                            <td><?= $array['3']+$array['4'] ?></td>
+                                                            <td><?= $array['1'] ?></td>
+                                                            <td><?= $array['2'] ?></td>
+                                                            <td><?= $array['3'] ?></td>
+                                                            <td><?= $array['4'] ?></td>
+                                                            <td><?= $array['5'] ?></td>
+                                                            <td><?= $array['6'] ?></td>
 
-                                                                </tr>
-                                                                <?php
+                                                        </tr>
+                                                        <?php
                                                                      }
                                                                       ?>
-                                                            </tbody>
-                                                            <tfoot>
-                                                                <tr>
-                                                                    <th>Testados</th>
-                                                                    <th>Recuperado</th>
-                                                                    <th>Negativo</th>
-                                                                    <th>Possetivo</th>
-                                                                    <th>Quarentena</th>
-                                                                    <th>Obitos</th>
-                                                                    <th>Atualizado em:</th>
-                                                                </tr>
-                                                            </tfoot>
-                                                        </table>
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <th>Testados</th>
+                                                            <th>Recuperado</th>
+                                                            <th>Negativo</th>
+                                                            <th>Possetivo</th>
+                                                            <th>Quarentena</th>
+                                                            <th>Obitos</th>
+                                                            <th>Atualizado em:</th>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
                                             </div>
                                             <div class="tab-pane fade" id="gaza" role="tabpanel"
                                                 aria-labelledby="IDgaza">
-                                                <table  class="table table-bordered table-striped">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th>Testados</th>
-                                                                    <th>Recuperado</th>
-                                                                    <th>Negativo</th>
-                                                                    <th>Possetivo</th>
-                                                                    <th>Quarentena</th>
-                                                                    <th>Obitos</th>
-                                                                    <th>Atualizado em:</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <?php
+                                                <table class="table table-bordered table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Testados</th>
+                                                            <th>Recuperado</th>
+                                                            <th>Negativo</th>
+                                                            <th>Possetivo</th>
+                                                            <th>Quarentena</th>
+                                                            <th>Obitos</th>
+                                                            <th>Atualizado em:</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <?php
                                                                     $tabela=mysqli_query($conexao, "SELECT * FROM `gaza` ");
                                                                      while($array=mysqli_fetch_array($tabela)) {
                                                                          ?>
-                                                                    <td><?= $array['3']+$array['4'] ?></td>
-                                                                    <td><?= $array['1'] ?></td>
-                                                                    <td><?= $array['2'] ?></td>
-                                                                    <td><?= $array['3'] ?></td>
-                                                                    <td><?= $array['4'] ?></td>
-                                                                    <td><?= $array['5'] ?></td>
-                                                                    <td><?= $array['6'] ?></td>
+                                                            <td><?= $array['3']+$array['4'] ?></td>
+                                                            <td><?= $array['1'] ?></td>
+                                                            <td><?= $array['2'] ?></td>
+                                                            <td><?= $array['3'] ?></td>
+                                                            <td><?= $array['4'] ?></td>
+                                                            <td><?= $array['5'] ?></td>
+                                                            <td><?= $array['6'] ?></td>
 
-                                                                </tr>
-                                                                <?php
+                                                        </tr>
+                                                        <?php
                                                                      }
                                                                       ?>
-                                                            </tbody>
-                                                            <tfoot>
-                                                                <tr>
-                                                                    <th>Testados</th>
-                                                                    <th>Recuperado</th>
-                                                                    <th>Negativo</th>
-                                                                    <th>Possetivo</th>
-                                                                    <th>Quarentena</th>
-                                                                    <th>Obitos</th>
-                                                                    <th>Atualizado em:</th>
-                                                                </tr>
-                                                            </tfoot>
-                                                        </table>
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <th>Testados</th>
+                                                            <th>Recuperado</th>
+                                                            <th>Negativo</th>
+                                                            <th>Possetivo</th>
+                                                            <th>Quarentena</th>
+                                                            <th>Obitos</th>
+                                                            <th>Atualizado em:</th>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
                                             </div>
                                             <div class="tab-pane fade" id="matola" role="tabpanel"
                                                 aria-labelledby="IDmatola">
-                                                <table  class="table table-bordered table-striped">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th>Testados</th>
-                                                                    <th>Recuperado</th>
-                                                                    <th>Negativo</th>
-                                                                    <th>Possetivo</th>
-                                                                    <th>Quarentena</th>
-                                                                    <th>Obitos</th>
-                                                                    <th>Atualizado em:</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <?php
+                                                <table class="table table-bordered table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Testados</th>
+                                                            <th>Recuperado</th>
+                                                            <th>Negativo</th>
+                                                            <th>Possetivo</th>
+                                                            <th>Quarentena</th>
+                                                            <th>Obitos</th>
+                                                            <th>Atualizado em:</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <?php
                                                                     $tabela=mysqli_query($conexao, "SELECT * FROM `provinciamaputo` ");
                                                                      while($array=mysqli_fetch_array($tabela)) {
                                                                          ?>
-                                                                    <td><?= $array['3']+$array['4'] ?></td>
-                                                                    <td><?= $array['1'] ?></td>
-                                                                    <td><?= $array['2'] ?></td>
-                                                                    <td><?= $array['3'] ?></td>
-                                                                    <td><?= $array['4'] ?></td>
-                                                                    <td><?= $array['5'] ?></td>
-                                                                    <td><?= $array['6'] ?></td>
+                                                            <td><?= $array['3']+$array['4'] ?></td>
+                                                            <td><?= $array['1'] ?></td>
+                                                            <td><?= $array['2'] ?></td>
+                                                            <td><?= $array['3'] ?></td>
+                                                            <td><?= $array['4'] ?></td>
+                                                            <td><?= $array['5'] ?></td>
+                                                            <td><?= $array['6'] ?></td>
 
-                                                                </tr>
-                                                                <?php
+                                                        </tr>
+                                                        <?php
                                                                      }
                                                                       ?>
-                                                            </tbody>
-                                                            <tfoot>
-                                                                <tr>
-                                                                    <th>Testados</th>
-                                                                    <th>Recuperado</th>
-                                                                    <th>Negativo</th>
-                                                                    <th>Possetivo</th>
-                                                                    <th>Quarentena</th>
-                                                                    <th>Obitos</th>
-                                                                    <th>Atualizado em:</th>
-                                                                </tr>
-                                                            </tfoot>
-                                                        </table>
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <th>Testados</th>
+                                                            <th>Recuperado</th>
+                                                            <th>Negativo</th>
+                                                            <th>Possetivo</th>
+                                                            <th>Quarentena</th>
+                                                            <th>Obitos</th>
+                                                            <th>Atualizado em:</th>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
                                             </div>
                                             <div class="tab-pane fade" id="maputo" role="tabpanel"
                                                 aria-labelledby="IDmaputo">
                                                 <table id="example" class="table table-bordered table-striped">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th>Testados</th>
-                                                                    <th>Recuperado</th>
-                                                                    <th>Negativo</th>
-                                                                    <th>Possetivo</th>
-                                                                    <th>Quarentena</th>
-                                                                    <th>Obitos</th>
-                                                                    <th>Atualizado em:</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <?php
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Testados</th>
+                                                            <th>Recuperado</th>
+                                                            <th>Negativo</th>
+                                                            <th>Possetivo</th>
+                                                            <th>Quarentena</th>
+                                                            <th>Obitos</th>
+                                                            <th>Atualizado em:</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <?php
                                                                     $tabela=mysqli_query($conexao, "SELECT * FROM `cidademaputo` ");
                                                                      while($array=mysqli_fetch_array($tabela)) {
                                                                          ?>
-                                                                    <td><?= $array['3']+$array['4'] ?></td>
-                                                                    <td><?= $array['1'] ?></td>
-                                                                    <td><?= $array['2'] ?></td>
-                                                                    <td><?= $array['3'] ?></td>
-                                                                    <td><?= $array['4'] ?></td>
-                                                                    <td><?= $array['5'] ?></td>
-                                                                    <td><?= $array['6'] ?></td>
+                                                            <td><?= $array['3']+$array['4'] ?></td>
+                                                            <td><?= $array['1'] ?></td>
+                                                            <td><?= $array['2'] ?></td>
+                                                            <td><?= $array['3'] ?></td>
+                                                            <td><?= $array['4'] ?></td>
+                                                            <td><?= $array['5'] ?></td>
+                                                            <td><?= $array['6'] ?></td>
 
-                                                                </tr>
-                                                                <?php
+                                                        </tr>
+                                                        <?php
                                                                      }
                                                                       ?>
-                                                            </tbody>
-                                                            <tfoot>
-                                                                <tr>
-                                                                    <th>Testados</th>
-                                                                    <th>Recuperado</th>
-                                                                    <th>Negativo</th>
-                                                                    <th>Possetivo</th>
-                                                                    <th>Quarentena</th>
-                                                                    <th>Obitos</th>
-                                                                    <th>Atualizado em:</th>
-                                                                </tr>
-                                                            </tfoot>
-                                                        </table>
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <th>Testados</th>
+                                                            <th>Recuperado</th>
+                                                            <th>Negativo</th>
+                                                            <th>Possetivo</th>
+                                                            <th>Quarentena</th>
+                                                            <th>Obitos</th>
+                                                            <th>Atualizado em:</th>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
                                             </div>
                                         </div>
                                     </div>
@@ -773,21 +773,23 @@
 
 <!-- End custom js for this page-->
 <script>
-  $(function () {
+$(function() {
     $("#example1").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+        "responsive": true,
+        "lengthChange": false,
+        "autoWidth": false,
+        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
     $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
+        "paging": true,
+        "lengthChange": false,
+        "searching": false,
+        "ordering": true,
+        "info": true,
+        "autoWidth": false,
+        "responsive": true,
     });
-  });
+});
 </script>
 </body>
 
