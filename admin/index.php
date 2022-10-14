@@ -31,16 +31,16 @@
                                 <div class="brand-logo">
                                     <img src="../images/logo.png" alt="logo">
                                 </div>
-                                <h4>Hello! let's get started</h4>
-                                <h6 class="font-weight-light">Sign in to continue.</h6>
+                                <h4>Olá! vamos começar</h4>
+                                <h6 class="font-weight-light">Faça login para continuar.</h6>
                                 <?php
-                                  session_start();
-                                  if(isset($_SESSION['erro'])){
+                                session_start();
+                                if (isset($_SESSION['erro'])) {
                                 ?>
-                                <div class="alert alert-danger" role="alert"><?php echo $_SESSION['erro'];?></div>
+                                <div class="alert alert-danger" role="alert"><?php echo $_SESSION['erro']; ?></div>
                                 <?php
-                                  unset($_SESSION['erro']);
-                                  }
+                                    unset($_SESSION['erro']);
+                                }
                                 ?>
                                 <form action="config/Controller.php" method="POST" class="pt-3">
                                     <div class="form-group">
