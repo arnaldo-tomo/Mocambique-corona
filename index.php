@@ -371,8 +371,6 @@
                                         <div class="col-lg-4">
                                             <h4 class="card-title">Idade entre</h4>
                                             <canvas id="salesDifference"></canvas>
-                                            <p class="mt-3 mb-4 mb-lg-0">
-                                                98 m778 </p>
                                         </div>
                                         <div class="col-lg-5">
                                             <h4 class="card-title">Covid19</h4>

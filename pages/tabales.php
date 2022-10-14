@@ -1,5 +1,5 @@
-<?php  include_once('../admin/config/conexao.php'); ?>
-<?php  include_once('../admin/config/total.php');   ?>
+<?php include_once('../admin/config/conexao.php'); ?>
+<?php include_once('../admin/config/total.php');   ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +23,19 @@
     <link rel="shortcut icon" href="../images/favicon.png" />
 </head>
 
-<body>
+<body onload="relogio()">
+    <script>
+    setTimeout(function() {
+                $.ajax({
+                    url: "/getnewdata",
+                    cache: false,
+                }).done(function(html) {
+                        $('#data-container ).html(html); });
+
+                        )
+                    }
+                    5000);
+    </script>
     <!-- partial:partials/_horizontal-navbar.html -->
     <div class="horizontal-menu">
         <nav class="bottom-navbar">
@@ -76,7 +88,7 @@
                                 <div>
                                     <h6 class="text-dark font-weight-bold mb-2">COVID19</h6>
                                     <h2 class="text-dark font-weight-bold mb-8">Painel Coronavírus</h2>
-                                    <h6 class="font-weight-normal mb-2">Atualizado em: 08/02/2022 17:40</h6>
+                                    <h6 class="font-weight-normal mb-2"><span id="text"></span> Horas</h6>
                                 </div>
 
                                 <div class="ms-lg-5 d-lg-flex d-none">
@@ -219,10 +231,10 @@
                                                     <tbody>
                                                         <tr>
                                                             <?php
-                                                                    $tabela=mysqli_query($conexao, "SELECT * FROM `niassa` ORDER BY codigo  ");
-                                                                     while($array=mysqli_fetch_array($tabela)) {
-                                                                         ?>
-                                                            <td><?= $array['3']+$array['4'] ?></td>
+                                                            $tabela = mysqli_query($conexao, "SELECT * FROM `niassa` ORDER BY codigo  ");
+                                                            while ($array = mysqli_fetch_array($tabela)) {
+                                                            ?>
+                                                            <td><?= $array['3'] + $array['4'] ?></td>
                                                             <td><?= $array['1'] ?></td>
                                                             <td><?= $array['2'] ?></td>
                                                             <td><?= $array['3'] ?></td>
@@ -232,8 +244,8 @@
 
                                                         </tr>
                                                         <?php
-                                                                     }
-                                                                      ?>
+                                                            }
+                                                    ?>
                                                     </tbody>
                                                     <tfoot>
                                                         <tr>
@@ -265,10 +277,10 @@
                                                     <tbody>
                                                         <tr>
                                                             <?php
-                                                                    $tabela=mysqli_query($conexao, "SELECT * FROM `tete` ");
-                                                                     while($array=mysqli_fetch_array($tabela)) {
-                                                                         ?>
-                                                            <td><?= $array['3']+$array['4'] ?></td>
+                                                            $tabela = mysqli_query($conexao, "SELECT * FROM `tete` ");
+                                                            while ($array = mysqli_fetch_array($tabela)) {
+                                                            ?>
+                                                            <td><?= $array['3'] + $array['4'] ?></td>
                                                             <td><?= $array['1'] ?></td>
                                                             <td><?= $array['2'] ?></td>
                                                             <td><?= $array['3'] ?></td>
@@ -278,8 +290,8 @@
 
                                                         </tr>
                                                         <?php
-                                                                     }
-                                                                      ?>
+                                                            }
+                                                    ?>
                                                     </tbody>
                                                     <tfoot>
                                                         <tr>
@@ -312,10 +324,10 @@
                                                     <tbody>
                                                         <tr>
                                                             <?php
-                                                                    $tabela=mysqli_query($conexao, "SELECT * FROM `nampula` ");
-                                                                     while($array=mysqli_fetch_array($tabela)) {
-                                                                         ?>
-                                                            <td><?= $array['3']+$array['4'] ?></td>
+                                                            $tabela = mysqli_query($conexao, "SELECT * FROM `nampula` ");
+                                                            while ($array = mysqli_fetch_array($tabela)) {
+                                                            ?>
+                                                            <td><?= $array['3'] + $array['4'] ?></td>
                                                             <td><?= $array['1'] ?></td>
                                                             <td><?= $array['2'] ?></td>
                                                             <td><?= $array['3'] ?></td>
@@ -325,8 +337,8 @@
 
                                                         </tr>
                                                         <?php
-                                                                     }
-                                                                      ?>
+                                                            }
+                                                    ?>
                                                     </tbody>
                                                     <tfoot>
                                                         <tr>
@@ -358,10 +370,10 @@
                                                     <tbody>
                                                         <tr>
                                                             <?php
-                                                                    $tabela=mysqli_query($conexao, "SELECT * FROM `tete` ");
-                                                                     while($array=mysqli_fetch_array($tabela)) {
-                                                                         ?>
-                                                            <td><?= $array['3']+$array['4'] ?></td>
+                                                            $tabela = mysqli_query($conexao, "SELECT * FROM `tete` ");
+                                                            while ($array = mysqli_fetch_array($tabela)) {
+                                                            ?>
+                                                            <td><?= $array['3'] + $array['4'] ?></td>
                                                             <td><?= $array['1'] ?></td>
                                                             <td><?= $array['2'] ?></td>
                                                             <td><?= $array['3'] ?></td>
@@ -371,8 +383,8 @@
 
                                                         </tr>
                                                         <?php
-                                                                     }
-                                                                      ?>
+                                                            }
+                                                    ?>
                                                     </tbody>
                                                     <tfoot>
                                                         <tr>
@@ -404,10 +416,10 @@
                                                     <tbody>
                                                         <tr>
                                                             <?php
-                                                                    $tabela=mysqli_query($conexao, "SELECT * FROM `zambezia` ");
-                                                                     while($array=mysqli_fetch_array($tabela)) {
-                                                                         ?>
-                                                            <td><?= $array['3']+$array['4'] ?></td>
+                                                            $tabela = mysqli_query($conexao, "SELECT * FROM `zambezia` ");
+                                                            while ($array = mysqli_fetch_array($tabela)) {
+                                                            ?>
+                                                            <td><?= $array['3'] + $array['4'] ?></td>
                                                             <td><?= $array['1'] ?></td>
                                                             <td><?= $array['2'] ?></td>
                                                             <td><?= $array['3'] ?></td>
@@ -417,8 +429,8 @@
 
                                                         </tr>
                                                         <?php
-                                                                     }
-                                                                      ?>
+                                                            }
+                                                    ?>
                                                     </tbody>
                                                     <tfoot>
                                                         <tr>
@@ -450,10 +462,10 @@
                                                     <tbody>
                                                         <tr>
                                                             <?php
-                                                                    $tabela=mysqli_query($conexao, "SELECT * FROM `manica` ");
-                                                                     while($array=mysqli_fetch_array($tabela)) {
-                                                                         ?>
-                                                            <td><?= $array['3']+$array['4'] ?></td>
+                                                            $tabela = mysqli_query($conexao, "SELECT * FROM `manica` ");
+                                                            while ($array = mysqli_fetch_array($tabela)) {
+                                                            ?>
+                                                            <td><?= $array['3'] + $array['4'] ?></td>
                                                             <td><?= $array['1'] ?></td>
                                                             <td><?= $array['2'] ?></td>
                                                             <td><?= $array['3'] ?></td>
@@ -463,8 +475,8 @@
 
                                                         </tr>
                                                         <?php
-                                                                     }
-                                                                      ?>
+                                                            }
+                                                    ?>
                                                     </tbody>
                                                     <tfoot>
                                                         <tr>
@@ -496,10 +508,10 @@
                                                     <tbody>
                                                         <tr>
                                                             <?php
-                                                                    $tabela=mysqli_query($conexao, "SELECT * FROM `beira` ");
-                                                                     while($array=mysqli_fetch_array($tabela)) {
-                                                                         ?>
-                                                            <td><?= $array['3']+$array['4'] ?></td>
+                                                            $tabela = mysqli_query($conexao, "SELECT * FROM `beira` ");
+                                                            while ($array = mysqli_fetch_array($tabela)) {
+                                                            ?>
+                                                            <td><?= $array['3'] + $array['4'] ?></td>
                                                             <td><?= $array['1'] ?></td>
                                                             <td><?= $array['2'] ?></td>
                                                             <td><?= $array['3'] ?></td>
@@ -509,8 +521,8 @@
 
                                                         </tr>
                                                         <?php
-                                                                     }
-                                                                      ?>
+                                                            }
+                                                    ?>
                                                     </tbody>
                                                     <tfoot>
                                                         <tr>
@@ -542,10 +554,10 @@
                                                     <tbody>
                                                         <tr>
                                                             <?php
-                                                                    $tabela=mysqli_query($conexao, "SELECT * FROM `inhambane` ");
-                                                                     while($array=mysqli_fetch_array($tabela)) {
-                                                                         ?>
-                                                            <td><?= $array['3']+$array['4'] ?></td>
+                                                            $tabela = mysqli_query($conexao, "SELECT * FROM `inhambane` ");
+                                                            while ($array = mysqli_fetch_array($tabela)) {
+                                                            ?>
+                                                            <td><?= $array['3'] + $array['4'] ?></td>
                                                             <td><?= $array['1'] ?></td>
                                                             <td><?= $array['2'] ?></td>
                                                             <td><?= $array['3'] ?></td>
@@ -555,8 +567,8 @@
 
                                                         </tr>
                                                         <?php
-                                                                     }
-                                                                      ?>
+                                                            }
+                                                    ?>
                                                     </tbody>
                                                     <tfoot>
                                                         <tr>
@@ -588,10 +600,10 @@
                                                     <tbody>
                                                         <tr>
                                                             <?php
-                                                                    $tabela=mysqli_query($conexao, "SELECT * FROM `gaza` ");
-                                                                     while($array=mysqli_fetch_array($tabela)) {
-                                                                         ?>
-                                                            <td><?= $array['3']+$array['4'] ?></td>
+                                                            $tabela = mysqli_query($conexao, "SELECT * FROM `gaza` ");
+                                                            while ($array = mysqli_fetch_array($tabela)) {
+                                                            ?>
+                                                            <td><?= $array['3'] + $array['4'] ?></td>
                                                             <td><?= $array['1'] ?></td>
                                                             <td><?= $array['2'] ?></td>
                                                             <td><?= $array['3'] ?></td>
@@ -601,8 +613,8 @@
 
                                                         </tr>
                                                         <?php
-                                                                     }
-                                                                      ?>
+                                                            }
+                                                    ?>
                                                     </tbody>
                                                     <tfoot>
                                                         <tr>
@@ -634,10 +646,10 @@
                                                     <tbody>
                                                         <tr>
                                                             <?php
-                                                                    $tabela=mysqli_query($conexao, "SELECT * FROM `provinciamaputo` ");
-                                                                     while($array=mysqli_fetch_array($tabela)) {
-                                                                         ?>
-                                                            <td><?= $array['3']+$array['4'] ?></td>
+                                                            $tabela = mysqli_query($conexao, "SELECT * FROM `provinciamaputo` ");
+                                                            while ($array = mysqli_fetch_array($tabela)) {
+                                                            ?>
+                                                            <td><?= $array['3'] + $array['4'] ?></td>
                                                             <td><?= $array['1'] ?></td>
                                                             <td><?= $array['2'] ?></td>
                                                             <td><?= $array['3'] ?></td>
@@ -647,8 +659,8 @@
 
                                                         </tr>
                                                         <?php
-                                                                     }
-                                                                      ?>
+                                                            }
+                                                    ?>
                                                     </tbody>
                                                     <tfoot>
                                                         <tr>
@@ -680,10 +692,10 @@
                                                     <tbody>
                                                         <tr>
                                                             <?php
-                                                                    $tabela=mysqli_query($conexao, "SELECT * FROM `cidademaputo` ");
-                                                                     while($array=mysqli_fetch_array($tabela)) {
-                                                                         ?>
-                                                            <td><?= $array['3']+$array['4'] ?></td>
+                                                            $tabela = mysqli_query($conexao, "SELECT * FROM `cidademaputo` ");
+                                                            while ($array = mysqli_fetch_array($tabela)) {
+                                                            ?>
+                                                            <td><?= $array['3'] + $array['4'] ?></td>
                                                             <td><?= $array['1'] ?></td>
                                                             <td><?= $array['2'] ?></td>
                                                             <td><?= $array['3'] ?></td>
@@ -693,8 +705,8 @@
 
                                                         </tr>
                                                         <?php
-                                                                     }
-                                                                      ?>
+                                                            }
+                                                    ?>
                                                     </tbody>
                                                     <tfoot>
                                                         <tr>
@@ -726,8 +738,9 @@
             <div class="d-sm-flex justify-content-center justify-content-sm-between">
                 <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright ©
                     2020 -
-                    <?php $ano = date('Y'); echo $ano;?> <a href="http://arnaldotomo.epizy.com/"
-                        target="_blank">http://arnaldotomo.epizy.com </a> </span>
+                    <?php $ano = date('Y');
+                    echo $ano; ?> <a href="http://arnaldotomo.epizy.com/" target="_blank">http://arnaldotomo.epizy.com
+                    </a> </span>
                 <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Podes
                     reutiliar os
                     codigos desse projeto para quais quer fins </a> templates</span>
@@ -772,6 +785,26 @@
 <script src="../vendors/tabelas/datatables-buttons/js/buttons.colVis.min.js"></script>
 
 <!-- End custom js for this page-->
+<script>
+$(function() {
+    $("#example1").DataTable({
+        "responsive": true,
+        "lengthChange": false,
+        "autoWidth": false,
+        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+        "paging": true,
+        "lengthChange": false,
+        "searching": false,
+        "ordering": true,
+        "info": true,
+        "autoWidth": false,
+        "responsive": true,
+    });
+});
+</script>
+
 <script>
 $(function() {
     $("#example1").DataTable({
