@@ -27,13 +27,15 @@
 <body onload="relogio()">
     <script>
     setTimeout(function() {
-        $.ajax({
-            url: "/getnewdata",
-            cache: false,
-        }).done(function(html) {
-            $('#data-container ).html(html);
-            });)
-    }, 5000);
+                $.ajax({
+                    url: "/getnewdata",
+                    cache: false,
+                }).done(function(html) {
+                        $('#data-container ).html(html); });
+
+                        )
+                    }
+                    5000);
     </script>
 
     <!-- partial:partials/_horizontal-navbar.html -->
@@ -226,121 +228,132 @@
                                                 <td>Niassa</td>
                                                 <td><?php echo number_format($PossesetivoNiassa['niassa'] + $NegativoNiassa['niassa']); ?>
                                                 </td>
-                                                <td><?php echo $RecuperadoNiassa['niassa']; ?></td>
-                                                <td><?php echo $NegativoNiassa['niassa']; ?></td>
-                                                <td><?php echo $PossesetivoNiassa['niassa']; ?></td>
-                                                <td><?php echo $QuarentenaNiassa['niassa']; ?></td>
-                                                <td><?php echo $obitoNiassa['niassa']; ?></td>
+                                                <td><?php echo number_format($RecuperadoNiassa['niassa']); ?></td>
+                                                <td><?php echo number_format($NegativoNiassa['niassa']); ?></td>
+                                                <td><?php echo number_format($PossesetivoNiassa['niassa']); ?></td>
+                                                <td><?php echo number_format($QuarentenaNiassa['niassa']); ?></td>
+                                                <td><?php echo number_format($obitoNiassa['niassa']); ?></td>
                                                 <td><?php echo $DataNiassa['niassa']; ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Cabo Delgado</td>
-                                                <td><?php echo $Possesetivcabodelgado['cabodelgado'] + $Negativocabodelgado['cabodelgado']; ?>
+                                                <td><?php echo number_format($Possesetivcabodelgado['cabodelgado'] + $Negativocabodelgado['cabodelgado']); ?>
                                                 </td>
-                                                <td><?php echo $Recuperadocabodelgado['cabodelgado']; ?></td>
-                                                <td><?php echo $Negativocabodelgado['cabodelgado']; ?></td>
-                                                <td><?php echo $Possesetivcabodelgado['cabodelgado']; ?></td>
-                                                <td><?php echo $Quarentenacabodelgado['cabodelgado']; ?></td>
-                                                <td><?php echo $obitocabodelgado['cabodelgado']; ?></td>
+                                                <td><?php echo number_format($Recuperadocabodelgado['cabodelgado']); ?>
+                                                </td>
+                                                <td><?php echo number_format($Negativocabodelgado['cabodelgado']); ?>
+                                                </td>
+                                                <td><?php echo number_format($Possesetivcabodelgado['cabodelgado']); ?>
+                                                </td>
+                                                <td><?php echo number_format($Quarentenacabodelgado['cabodelgado']); ?>
+                                                </td>
+                                                <td><?php echo number_format($obitocabodelgado['cabodelgado']); ?></td>
                                                 <td><?php echo $Datacabodelgado['cabodelgado']; ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Nampula</td>
-                                                <td><?php echo $Possesetivonampula['nampula1'] + $Negativonampula['nampula1']; ?>
+                                                <td><?php echo number_format($Possesetivonampula['nampula1'] + $Negativonampula['nampula1']); ?>
                                                 </td>
-                                                <td><?php echo $Recuperadonampula['nampula1']; ?></td>
-                                                <td><?php echo $Negativonampula['nampula1']; ?></td>
-                                                <td><?php echo $Possesetivonampula['nampula1']; ?></td>
-                                                <td><?php echo $Quarentenanampula['nampula1']; ?></td>
-                                                <td><?php echo $Obitonampula['nampula1']; ?></td>
+                                                <td><?php echo number_format($Recuperadonampula['nampula1']); ?></td>
+                                                <td><?php echo number_format($Negativonampula['nampula1']); ?></td>
+                                                <td><?php echo number_format($Possesetivonampula['nampula1']); ?></td>
+                                                <td><?php echo number_format($Quarentenanampula['nampula1']); ?></td>
+                                                <td><?php echo number_format($Obitonampula['nampula1']); ?></td>
                                                 <td><?php echo $Datanampula['nampula1']; ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Tete</td>
-                                                <td><?php echo $Possesetivotete['tete1'] + $Negativotete['tete1']; ?>
+                                                <td><?php echo number_format($Possesetivotete['tete1'] + $Negativotete['tete1']); ?>
                                                 </td>
-                                                <td><?php echo $Recuperadotete['tete1']; ?></td>
-                                                <td><?php echo $Negativotete['tete1']; ?></td>
-                                                <td><?php echo $Possesetivotete['tete1']; ?></td>
-                                                <td><?php echo $Quarentenatete['tete1']; ?></td>
-                                                <td><?php echo $obitotete['tete1']; ?></td>
+                                                <td><?php echo number_format($Recuperadotete['tete1']); ?></td>
+                                                <td><?php echo number_format($Negativotete['tete1']); ?></td>
+                                                <td><?php echo number_format($Possesetivotete['tete1']); ?></td>
+                                                <td><?php echo number_format($Quarentenatete['tete1']); ?></td>
+                                                <td><?php echo number_format($obitotete['tete1']); ?></td>
                                                 <td><?php echo $datatete['tete1']; ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Zambezia</td>
-                                                <td><?php echo $Possesetivozambezia['zambezia1'] + $Negativozambezia['zambezia1']; ?>
+                                                <td><?php echo number_format($Possesetivozambezia['zambezia1'] + $Negativozambezia['zambezia1']); ?>
                                                 </td>
-                                                <td><?php echo $Recuperadozambezia['zambezia1']; ?></td>
-                                                <td><?php echo $Negativozambezia['zambezia1']; ?></td>
-                                                <td><?php echo $Possesetivozambezia['zambezia1']; ?></td>
-                                                <td><?php echo $Quarentenazambezia['zambezia1']; ?></td>
-                                                <td><?php echo $obitozambezia['zambezia1']; ?></td>
+                                                <td><?php echo number_format($Recuperadozambezia['zambezia1']); ?></td>
+                                                <td><?php echo number_format($Negativozambezia['zambezia1']); ?></td>
+                                                <td><?php echo number_format($Possesetivozambezia['zambezia1']); ?></td>
+                                                <td><?php echo number_format($Quarentenazambezia['zambezia1']); ?></td>
+                                                <td><?php echo number_format($obitozambezia['zambezia1']); ?></td>
                                                 <td><?php echo $datazambezia['data']; ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Manica</td>
-                                                <td><?php echo $Possesetivomanica['manica1'] + $Negativomanica['manica1']; ?>
+                                                <td><?php echo number_format($Possesetivomanica['manica1'] + $Negativomanica['manica1']); ?>
                                                 </td>
-                                                <td><?php echo $Recuperadomanica['manica1']; ?></td>
-                                                <td><?php echo $Negativomanica['manica1']; ?></td>
-                                                <td><?php echo $Possesetivomanica['manica1']; ?></td>
-                                                <td><?php echo $Quarentenamanica['manica1']; ?></td>
-                                                <td><?php echo $obitomanica['manica1']; ?></td>
+                                                <td><?php echo number_format($Recuperadomanica['manica1']); ?></td>
+                                                <td><?php echo number_format($Negativomanica['manica1']); ?></td>
+                                                <td><?php echo number_format($Possesetivomanica['manica1']); ?></td>
+                                                <td><?php echo number_format($Quarentenamanica['manica1']); ?></td>
+                                                <td><?php echo number_format($obitomanica['manica1']); ?></td>
                                                 <td><?php echo $datamanica['manica1']; ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Sofala</td>
-                                                <td><?php echo $Possesetivobeira['total'] + $Negativobeira['total']; ?>
+                                                <td><?php echo number_format($Possesetivobeira['total'] + $Negativobeira['total']); ?>
                                                 </td>
-                                                <td><?php echo $Recuperadobeira['total']; ?></td>
-                                                <td><?php echo $Negativobeira['total']; ?></td>
-                                                <td><?php echo $Possesetivobeira['total']; ?></td>
-                                                <td><?php echo $Quarentenabeira['total']; ?></td>
-                                                <td><?php echo $obitobeira['total']; ?></td>
+                                                <td><?php echo number_format($Recuperadobeira['total']); ?></td>
+                                                <td><?php echo number_format($Negativobeira['total']); ?></td>
+                                                <td><?php echo number_format($Possesetivobeira['total']); ?></td>
+                                                <td><?php echo number_format($Quarentenabeira['total']); ?></td>
+                                                <td><?php echo number_format($obitobeira['total']); ?></td>
                                                 <td><?php echo $databeira['dado']; ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Inhambane</td>
-                                                <td><?php echo $Possesetivoinhambane['totalidade1'] + $Negativoinhambane['totalidade1']; ?>
+                                                <td><?php echo number_format($Possesetivoinhambane['totalidade1'] + $Negativoinhambane['totalidade1']); ?>
                                                 </td>
-                                                <td><?php echo $Recuperadoinhambane['totalidade1']; ?></td>
-                                                <td><?php echo $Negativoinhambane['totalidade1']; ?></td>
-                                                <td><?php echo $Possesetivoinhambane['totalidade1']; ?></td>
-                                                <td><?php echo $Quarentenainhambane['totalidade1']; ?></td>
-                                                <td><?php echo $obitoinhambane['totalidade1']; ?></td>
+                                                <td><?php echo number_format($Recuperadoinhambane['totalidade1']); ?>
+                                                </td>
+                                                <td><?php echo number_format($Negativoinhambane['totalidade1']); ?></td>
+                                                <td><?php echo number_format($Possesetivoinhambane['totalidade1']); ?>
+                                                </td>
+                                                <td><?php echo number_format($Quarentenainhambane['totalidade1']); ?>
+                                                </td>
+                                                <td><?php echo number_format($obitoinhambane['totalidade1']); ?></td>
                                                 <td><?php echo $datainhambane['totalidade1']; ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Gaza</td>
-                                                <td><?php echo $Possesetivogaza['gaza1'] + $Negativogaza['gaza1']; ?>
+                                                <td><?php echo number_format($Possesetivogaza['gaza1'] + $Negativogaza['gaza1']); ?>
                                                 </td>
-                                                <td><?php echo $Recuperadogaza['gaza1']; ?></td>
-                                                <td><?php echo $Negativogaza['gaza1']; ?></td>
-                                                <td><?php echo $Possesetivogaza['gaza1']; ?></td>
-                                                <td><?php echo $Quarentenagaza['gaza1']; ?></td>
-                                                <td><?php echo $obitogaza['gaza1']; ?></td>
+                                                <td><?php echo number_format($Recuperadogaza['gaza1']); ?></td>
+                                                <td><?php echo number_format($Negativogaza['gaza1']); ?></td>
+                                                <td><?php echo number_format($Possesetivogaza['gaza1']); ?></td>
+                                                <td><?php echo number_format($Quarentenagaza['gaza1']); ?></td>
+                                                <td><?php echo number_format($obitogaza['gaza1']); ?></td>
                                                 <td><?php echo $datagaza['gaza1']; ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Pronvincia de Maputo</td>
-                                                <td><?php echo $Possesetivoprovincia['provincia1'] + $Negativoprovincia['provincia1']; ?>
+                                                <td><?php echo number_format($Possesetivoprovincia['provincia1'] + $Negativoprovincia['provincia1']); ?>
                                                 </td>
-                                                <td><?php echo $Recuperadoprovincia['provincia1']; ?></td>
-                                                <td><?php echo $Negativoprovincia['provincia1']; ?></td>
-                                                <td><?php echo $Possesetivoprovincia['provincia1']; ?></td>
-                                                <td><?php echo $Quarentenaprovincia['provincia1']; ?></td>
-                                                <td><?php echo $obitoprovincia['provincia1']; ?></td>
+                                                <td><?php echo number_format($Recuperadoprovincia['provincia1']); ?>
+                                                </td>
+                                                <td><?php echo number_format($Negativoprovincia['provincia1']); ?></td>
+                                                <td><?php echo number_format($Possesetivoprovincia['provincia1']); ?>
+                                                </td>
+                                                <td><?php echo number_format($Quarentenaprovincia['provincia1']); ?>
+                                                </td>
+                                                <td><?php echo number_format($obitoprovincia['provincia1']); ?></td>
                                                 <td><?php echo $dataprovincia['provincia1']; ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Cidade de Maputo</td>
-                                                <td><?php echo $Possesetivocidade['ciademaputo1'] + $Negativocidade['ciademaputo1']; ?>
+                                                <td><?php echo number_format($Possesetivocidade['ciademaputo1'] + $Negativocidade['ciademaputo1']); ?>
                                                 </td>
-                                                <td><?php echo $Recuperadocidade['ciademaputo1']; ?></td>
-                                                <td><?php echo $Negativocidade['ciademaputo1']; ?></td>
-                                                <td><?php echo $Possesetivocidade['ciademaputo1']; ?></td>
-                                                <td><?php echo $Quarentenacidade['ciademaputo1']; ?></td>
-                                                <td><?php echo $obitocidade['ciademaputo1']; ?></td>
+                                                <td><?php echo number_format($Recuperadocidade['ciademaputo1']); ?></td>
+                                                <td><?php echo number_format($Negativocidade['ciademaputo1']); ?></td>
+                                                <td><?php echo number_format($Possesetivocidade['ciademaputo1']); ?>
+                                                </td>
+                                                <td><?php echo number_format($Quarentenacidade['ciademaputo1']); ?></td>
+                                                <td><?php echo number_format($obitocidade['ciademaputo1']); ?></td>
                                                 <td><?php echo $datacidade['ciademaputo1']; ?></td>
                                             </tr>
                                         </tbody>
@@ -473,7 +486,7 @@
                 <script src="js/time.js"></script>
                 <!-- End custom js for this page-->
 
-                <!-- DataTables  & Plugins -->
+                <!-- DataTables   Plugins -->
                 <script src="datatables/jquery.dataTables.min.js"></script>
                 <script src="datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
                 <script src="datatables-responsive/js/dataTables.responsive.min.js"></script>
