@@ -1,7 +1,7 @@
 <?php include_once('admin/config/conexao.php'); ?>
 <?php include_once('admin/config/total.php');  ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-mz">
 
 <head>
     <!-- Required meta tags -->
@@ -35,6 +35,7 @@
             });)
     }, 5000);
     </script>
+
     <!-- partial:partials/_horizontal-navbar.html -->
     <div class="horizontal-menu">
         <nav class="bottom-navbar">
@@ -77,6 +78,7 @@
             </div>
         </nav>
     </div>
+
     <div class="container-fluid page-body-wrapper">
         <div class="main-panel">
             <div class="container">
@@ -200,7 +202,7 @@
                     <div class="col-lg-12 grid-margin stretch-card">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Síntese de casos,posetivos, negativos, recuperdodos & óbitos.
+                                <h4 class="card-title">Síntese de casos,posetivos, negativos, recuperdodos e óbitos.
                                 </h4>
                                 <p class="card-description">
                                     Fonte:<code>Ministerio da saude (MISAU) </code>
@@ -357,13 +359,14 @@
                                             <h4 class="card-title">Idade entre</h4>
                                             <canvas id="salesDifference"></canvas>
                                             <p class="mt-3 mb-4 mb-lg-0">
-                                            </p>
+                                                98 m778 </p>
                                         </div>
                                         <div class="col-lg-5">
                                             <h4 class="card-title">Covid19</h4>
                                             <div class="row">
                                                 <div class="col-sm-4">
                                                     <ul class="graphl-legend-rectangle">
+                                                        <li><span class="bg-dark"></span>Testados</li>
                                                         <li><span class="bg-danger"></span>Obitos</li>
                                                         <li><span class="bg-warning"></span>Quarentena</li>
                                                         <li><span class="bg-info"></span>Negativo</li>
@@ -380,7 +383,7 @@
                                             <?php $total = 31616078; ?>
                                             <h2 class="text-dark font-weight-bold mb-4">Populaçao nacional.
                                                 <?= number_format($total) ?></h2>
-                                            <h 6 class="card-body"></h>
+                                            <h6 class="card-body"></h6>
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <div class="progress progress-lg grouped mb-2">
@@ -427,11 +430,9 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
-
-
                 </div>
+
                 <div class="container">
                     <footer class="footer">
                         <div class="footer-wrap">
@@ -448,21 +449,17 @@
                         </div>
                     </footer>
                 </div>
-                <!-- container-scroller -->
-                <!-- base:js -->
-                <script src="vendors/base/vendor.bundle.base.js">
-                < /scrip> <!--endinject-- >
 
-                <
-                script src = "custom.js" >
-                </script>
+                <script src="vendors/base/vendor.bundle.base.js"></script>
+
+                <script src="custom.js"></script>
                 <script src="popper.min.js"></script>
-                <!-- Plugin js for this page-->
-                <!-- End plugin js for this page-->
-                <!-- inject:js -->
+
                 <script src="js/template.js"></script>
                 <!-- endinject -->
+
                 <!-- plugin js for this page -->
+
                 <!-- End plugin js for this page -->
                 <script src="vendors/chart.js/Chart.min.js"></script>
                 <script src="vendors/progressbar.js/progressbar.min.js"></script>
@@ -470,6 +467,7 @@
                 <script src="vendors/justgage/raphael-2.1.4.min.js"></script>
                 <script src="vendors/justgage/justgage.js"></script>
                 <script src="js/jquery.cookie.js" type="text/javascript"></script>
+
                 <!-- Custom js for this page-->
                 <script src="js/dashboard.js"></script>
                 <script src="js/time.js"></script>
@@ -489,7 +487,6 @@
                 <script src="datatables-buttons/js/buttons.print.min.js"></script>
                 <script src="datatables-buttons/js/buttons.colVis.min.js"></script>
 
-                <!-- End custom js for this page-->
 
                 <script>
                 $(function() {
