@@ -37,8 +37,7 @@
                     }
                     5000);
     </script>
-
-    <!-- partial:partials/_horizontal-navbar.html -->
+    <span id="text"></span>
     <div class="horizontal-menu">
         <nav class="bottom-navbar">
             <div class="container">
